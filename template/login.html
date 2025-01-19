@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(232, 232, 232);
+        }
+        div{
+            margin-left: 33%;
+            margin-top: 10%;
+            background-color: rgb(176, 175, 175);
+            width: 20%;
+            padding: 20px 40px 40px 40px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        h1{
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name">Userame</label>
+            <input type="text" name="name"><br><br>
+            <label for="password">Password</label>
+            <input type="text" name="password"><br><br>
+            <button type="submit">Login</button><br><br>
+            <a href="{% url 'reg' %}">Sign Up</a>
+        </form>
+    </div>
+</body>
+</html>
+</html>

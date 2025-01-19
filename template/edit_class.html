@@ -1,0 +1,17 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<div>
+    <h3>Edit Class</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Class Name:</label>
+        <input type="text" name="name" value="{{obj.class_name}}" required><br><br>
+        <label for="sec">Section</label>
+        <input type="text" name="sec" value="{{obj.section}}" required><br><br>
+        <label for="teacher">Class Teacher</label>
+        <input type="text" name="teacher" value="{{obj.class_teacher}}" required><br><br>
+        <button type="submit">EDIT</button>
+    </form>
+</div>
+
+{% endblock %}

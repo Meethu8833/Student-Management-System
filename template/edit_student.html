@@ -1,0 +1,25 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<div>
+    <h3>Edit Student</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{obj.name}}" required><br><br>
+        <label for="no">Roll no:</label>
+        <input type="text" name="no" value="{{obj.roll_number}}" required><br><br>
+        <label for="cls">Class</label>
+        <select name="cls">
+            {% for x in data %}
+            <option value="{{x.id}}">{{x.class_name}}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" value="{{obj.email}}" required><br><br>
+        <label for="dob">Date of Bitth</label>
+        <input type="text" name="dob" value="{{obj.date_of_birth|date:'Y-m-d'}}" required><br><br>
+        <button type="submit">EDIT</button>
+    </form>
+</div>
+
+{% endblock %}

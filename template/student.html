@@ -1,0 +1,31 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<div class="ss" style="margin: 20px;">
+    <div>
+        <h3>Student Details</h3>
+        <div style="margin-top: 20px;"><button><a href="{% url 'addSt' %}">Add Student</a></button></div>
+    </div>
+    
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Class</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td>{{x.name}}</td>
+            <td>{{x.roll_number}}</td>
+            <td>{{x.student_class}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.date_of_birth}}</td>
+            <td><button><a href="{% url 'editSt' x.id %}">Edit</a></button></td>
+            <td><button><a href="{% url 'deleteSt' x.id %}">Delete</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

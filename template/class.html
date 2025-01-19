@@ -1,0 +1,27 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<div class="ss" style="margin: 20px;">
+    <div>
+        <h3>Class Details</h3>
+        <div style="margin-top: 20px;"><button><a href="{% url 'addC' %}">Add Class</a></button></div>
+    </div>
+    
+    <table border="1">
+        <tr>
+            <th>Class Name</th>
+            <th>Section</th>
+            <th>Class Teacher</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td>{{x.class_name}}</td>
+            <td>{{x.section}}</td>
+            <td>{{x.class_teacher}}</td>
+            <td><button><a href="{% url 'editC' x.id %}">Edit</a></button></td>
+            <td><button><a href="{% url 'deleteC' x.id %}">Delete</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
